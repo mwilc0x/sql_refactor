@@ -1,34 +1,24 @@
-CS 336 - Principles of Information and Data Management  
-Project Phase 2
-
-
-To run the code, first change one of the environment files 
-(for example phase2_small.env) to use your netid as RECS_DB_NAME 
-and RECS_DB_USER, and your password that can be found in the Dropbox on SAKAI.
-Then, use the run_report.sh script as
- ./run_report.sh phase2_small.env
-
-The script will:
-  1. clear your database schema of routines, tables and views
-  2. compile the code using ant
-  3. run the code
-  4. report the runtime
-  5. check if the generated report matches a report previously generated
-
-The generated report will appear in "out".  Data files are in "raw_data".
-"lib" contains MySQL Connector/J (you are not allowed to use any other libraries).
-"verify" contains instances of the correct reports.
-
-Your job is the change the code in the src folder to make this code run faster,
-but still producing the same output.  You want to make 
-"./run_report.sh phase2_full.env" run quickly (30 mins or less).
-
-There should not be any reason to change any files other than the 
-environment files for your netid/password, and the code in src. 
-
-Your code must run using the run_report.sh script
-
-Your submission to SAKAI should consist of a brief writeup explaining
-how your code works and a gzipped tar of the src folder (with your changes).
-
-Please see the pahse 2 project document in SAKAI for a longer description
+     Mike Wilcox CS336 Database Optimization 
+ *   --------------------------------------
+ *    
+ *   Note: This code was given to use as a template. THe code that I wrote is under src/edu/rutgers/cs336/EntryPoint.java
+ *
+ *   Ran out of time to really get this working with medium files up, but it is implemented with all SQL.
+ *   Was going to try and implement multi-threading as well but ran out of time.
+ *   
+ *   This program runs by loading in the date from the raw data with LOAD DATA LOCAL INFILE
+ *   I then proceeded to create functions for computing the nearest business date, the domain name, 
+ *   and for all of the future 1, 5, 20, 60, and 125 business dates. 
+ *   
+ *   My program is essentially a series of SQL UPDATE statements that are executed. In the process
+ *   I create new columns in the recommendations table and also create a new table to host the SPX data.
+ *   I ran into some trouble with my date logic. The numbers were ever so off in the medium output and I 
+ *   was unsuccessful is debugging these errors before the submission time. 
+ *   
+ *   However, it will still compute the medium file in around 3:30 minutes. I expect that the large file
+ *   will go over the 30 minute mark. The small file is the only one that matches, which clocks in around ~4s.
+ *  
+ *  I was looking into multithreading as well as many other students seemed to get fast times using that method,
+ *  however I saw that as defeating the purpose of this assignment.
+ *  
+ * */
