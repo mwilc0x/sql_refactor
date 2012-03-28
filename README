@@ -1,24 +1,22 @@
      Mike Wilcox CS336 Database Optimization 
- *   --------------------------------------
- *    
- *   Note: This code was given to use as a template. THe code that I wrote is under src/edu/rutgers/cs336/EntryPoint.java
- *
- *   Ran out of time to really get this working with medium files up, but it is implemented with all SQL.
- *   Was going to try and implement multi-threading as well but ran out of time.
- *   
- *   This program runs by loading in the date from the raw data with LOAD DATA LOCAL INFILE
- *   I then proceeded to create functions for computing the nearest business date, the domain name, 
- *   and for all of the future 1, 5, 20, 60, and 125 business dates. 
- *   
- *   My program is essentially a series of SQL UPDATE statements that are executed. In the process
- *   I create new columns in the recommendations table and also create a new table to host the SPX data.
- *   I ran into some trouble with my date logic. The numbers were ever so off in the medium output and I 
- *   was unsuccessful is debugging these errors before the submission time. 
- *   
- *   However, it will still compute the medium file in around 3:30 minutes. I expect that the large file
- *   will go over the 30 minute mark. The small file is the only one that matches, which clocks in around ~4s.
- *  
- *  I was looking into multithreading as well as many other students seemed to get fast times using that method,
- *  however I saw that as defeating the purpose of this assignment.
- *  
- * */
+     --------------------------------------
+      
+     Note: This code was given to use as a template. THe code that I wrote is under src/edu/rutgers/cs336/EntryPoint.java
+  
+     Ran out of time to really get this working with medium files up, but it is implemented with all SQL.
+     Was going to try and implement multi-threading as well but ran out of time.
+     
+     This program runs by loading in the date from the raw data with LOAD DATA LOCAL INFILE
+     I then proceeded to create functions for computing the nearest business date, the domain name, 
+     and for all of the future 1, 5, 20, 60, and 125 business dates. 
+     
+     My program is essentially a series of SQL UPDATE statements that are executed. In the process
+     I create new columns in the recommendations table and also create a new table to host the SPX data.
+     I ran into some trouble with my date logic. The numbers were ever so off in the medium output and I 
+     was unsuccessful is debugging these errors before the submission time. 
+     
+     However, it will still compute the medium file in around 3:30 minutes. I expect that the large file
+     will go over the 30 minute mark. The small file is the only one that matches, which clocks in around ~4s.
+    
+    I was looking into multithreading as well as many other students seemed to get fast times using that method,
+    however I saw that as defeating the purpose of this assignment.
