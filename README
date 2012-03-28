@@ -1,0 +1,34 @@
+CS 336 - Principles of Information and Data Management  
+Project Phase 2
+
+
+To run the code, first change one of the environment files 
+(for example phase2_small.env) to use your netid as RECS_DB_NAME 
+and RECS_DB_USER, and your password that can be found in the Dropbox on SAKAI.
+Then, use the run_report.sh script as
+ ./run_report.sh phase2_small.env
+
+The script will:
+  1. clear your database schema of routines, tables and views
+  2. compile the code using ant
+  3. run the code
+  4. report the runtime
+  5. check if the generated report matches a report previously generated
+
+The generated report will appear in "out".  Data files are in "raw_data".
+"lib" contains MySQL Connector/J (you are not allowed to use any other libraries).
+"verify" contains instances of the correct reports.
+
+Your job is the change the code in the src folder to make this code run faster,
+but still producing the same output.  You want to make 
+"./run_report.sh phase2_full.env" run quickly (30 mins or less).
+
+There should not be any reason to change any files other than the 
+environment files for your netid/password, and the code in src. 
+
+Your code must run using the run_report.sh script
+
+Your submission to SAKAI should consist of a brief writeup explaining
+how your code works and a gzipped tar of the src folder (with your changes).
+
+Please see the pahse 2 project document in SAKAI for a longer description

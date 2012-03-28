@@ -1,0 +1,20 @@
+<!-- This is the config file used by ant to compile your code.
+     You should not need to edit this file.  
+     If for some reason, you believe changes are necessary, email the TA first. -->
+	
+<project name="RecReporter" default="compile" basedir=".">
+	
+	<target name="clean" description="remove previously compiled code">
+	    <delete dir="classes"/>
+	</target>
+	
+	<target name="compile" depends="clean" description="compile and deposit class files in classes directory">
+	    <!-- Create the build directory structure used by compile -->
+    <mkdir dir="classes"/>
+	<javac srcdir="src" 
+	       fork="yes"
+		   includeantruntime="false"
+	       destdir="classes">
+    </javac>
+  </target>
+</project>	
